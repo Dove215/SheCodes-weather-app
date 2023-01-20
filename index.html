@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .weather-app {
+        display: block;
+        margin: 300px auto;
+        padding: 40px 30px;
+        max-width: 600px;
+
+        border-radius: 10px;
+        background: linear-gradient(
+          179deg,
+          rgb(110, 144, 242) 3.3%,
+          rgb(245, 193, 193) 100%
+        );
+        box-shadow: 3px 3px 6px 0px grey;
+        font-family: "Times New Roman", Times, serif;
+      }
+
+      .temperature {
+        font-weight: bold;
+        font-size: 16px;
+      }
+      h1 {
+        position: relative;
+        left: 20px;
+        color: azure;
+        font-size: 50px;
+      }
+      h2 {
+        position: relative;
+        color: azure;
+        text-align: center;
+        font-size: 50px;
+        left: -60px;
+      }
+      p {
+        position: relative;
+        top: 0px;
+        right: 20px;
+        text-align: right;
+        font-size: small;
+        color: azure;
+      }
+      .date {
+        position: relative;
+        right: -50px;
+        top: -5px;
+        font-size: 12px;
+        text-align: right;
+        color: azure;
+        font-style: italic;
+      }
+
+      .btn {
+        background-color: #d9b7cc;
+        border: 1px solid #d9b7cc;
+      }
+      .btn:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="weather-app">
+        <form class="row" id="search-engine">
+          <div class="col-9">
+            <input
+              type="city"
+              class="form-control"
+              id="input-city"
+              placeholder="Enter city here"
+            />
+          </div>
+          <div class="col-3">
+            <button type="submit" class="btn btn-primary mb-3">Search</button>
+          </div>
+        </form>
+
+        <div class="cityWeather">
+          <div class="row">
+            <div class="col-8">
+              <h1>Hannover</h1>
+              <h2><span class="temp" id="warmth">🌧️ 3</span></h2>
+            </div>
+            <div class="col-4">
+              <span class="date" id="time"> 8th December, 2022 </span>
+              <p>
+                <br />
+                🌬️ Wind = <span id="wind"> 11</span> km/h <br />
+                💧 Humidity=<span id="humid">84</span>%
+              </p>
+            </div>
+          </div>
+        </div>
+        <br />
+
+        <div class="temperature text-center">
+          <div class="row">
+            <div class="col">
+              -1°/2° <br />
+              ☁️ <br />
+              Fr
+            </div>
+            <div class="col">
+              -3°/1° <br />
+              ☁️ <br />
+              Sa
+            </div>
+            <div class="col">
+              -3°/-1° <br />
+              ☁️ <br />
+              Su
+            </div>
+            <div class="col">
+              -3°/0° <br />
+              ☁️ <br />
+              Mo
+            </div>
+            <div class="col">
+              -4°/0° <br />
+              ☁️ <br />
+              Tue
+            </div>
+            <div class="col">
+              -4°/0° <br />
+              🌤️ <br />
+              Wed
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
