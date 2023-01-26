@@ -26,6 +26,12 @@ let dateElement = document.querySelector("#time");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
 
+function home(city) {
+  let apiKey = "515c9ddbeb3cda9061acfab71031839e";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
+
 function showTemperature(response) {
   console.log(response.data);
   let roundTemp = Math.round(response.data.main.temp);
@@ -36,6 +42,12 @@ function showTemperature(response) {
     response.data.wind.speed
   );
   document.querySelector("#humid").innerHTML = response.data.main.humidity;
+  let logoElement = document.querySelector("#logo");
+  logoElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  logoElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function cityWeather(event) {
@@ -53,3 +65,5 @@ function cityWeather(event) {
 
 let form = document.querySelector("#search-engine");
 form.addEventListener("submit", cityWeather);
+
+home("Hannover");
