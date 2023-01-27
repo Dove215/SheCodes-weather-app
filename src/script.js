@@ -42,6 +42,8 @@ function showTemperature(response) {
     response.data.wind.speed
   );
   document.querySelector("#humid").innerHTML = response.data.main.humidity;
+  document.querySelector("#report").innerHTML =
+    response.data.weather[0].description;
   let logoElement = document.querySelector("#logo");
   logoElement.setAttribute(
     "src",
