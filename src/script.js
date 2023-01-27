@@ -37,7 +37,7 @@ function showTemperature(response) {
   let roundTemp = Math.round(response.data.main.temp);
   let temperature = document.querySelector("#warmth");
   console.log(temperature);
-  temperature.innerHTML = `${roundTemp} °`;
+  temperature.innerHTML = `${roundTemp}`;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
@@ -51,6 +51,23 @@ function showTemperature(response) {
   );
   logoElement.setAttribute("alt", response.data.weather[0].description);
 }
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#warmth");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
+}
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#warmth");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
 
 function cityWeather(event) {
   event.preventDefault();
@@ -67,5 +84,11 @@ function cityWeather(event) {
 
 let form = document.querySelector("#search-engine");
 form.addEventListener("submit", cityWeather);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 home("Hannover");

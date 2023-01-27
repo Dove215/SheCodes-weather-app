@@ -46,6 +46,19 @@
         font-size: 50px;
         left: -60px;
       }
+      .units {
+        position: relative;
+        font-size: 16px;
+        top: -15px;
+        color: azure;
+      }
+      .active {
+        color: azure;
+        cursor: default;
+      }
+      .active:link {
+        text-decoration: none;
+      }
       p {
         position: relative;
         top: 0px;
@@ -114,6 +127,10 @@
               <h2>
                 <img id="logo" class="center" width="120px" />
                 <span class="temp" id="warmth"></span>
+                <span class="units"
+                  ><a href="#" id="celsius-link" class="active">°C</a> |
+                  <a href="#" id="fahrenheit-link"> °F</a></span
+                >
                 <span class="description" id="report"> </span>
               </h2>
             </div>
@@ -169,7 +186,8 @@
             target="_blank"
             >Open-source code</a
           >
-          by Dovile Zukauskiene
+          by Dovile Zukauskiene, hosted on
+          <a href="https://bejewelled-sunshine-dc4eb7.netlify.app">Netlify</a>
         </footer>
       </div>
     </div>
