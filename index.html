@@ -42,14 +42,16 @@
       h2 {
         position: relative;
         color: azure;
-        text-align: center;
+        text-align: left;
         font-size: 50px;
-        left: -60px;
+        top: -15px;
       }
       .units {
         position: relative;
-        font-size: 16px;
-        top: -15px;
+
+        font-size: 20px;
+        top: -10px;
+        left: -10px;
         color: azure;
       }
       .active {
@@ -77,14 +79,18 @@
         font-style: italic;
       }
       .description {
-        font-size: 12px;
+        font-size: 14px;
         text-align: left;
         position: relative;
+        font-style: italic;
+        left: -225px;
+        top: -10px;
+        margin: 0;
       }
       .temp {
         position: relative;
-        font-size: 40px;
-        top: 10px;
+        font-size: 60px;
+        top: 15px;
       }
       footer {
         position: relative;
@@ -124,14 +130,14 @@
           <div class="row">
             <div class="col-8">
               <h1>Hannover</h1>
+              <p><span class="description" id="report"> </span></p>
               <h2>
-                <img id="logo" class="center" width="120px" />
+                <img id="logo" width="100px" />
                 <span class="temp" id="warmth"></span>
                 <span class="units"
                   ><a href="#" id="celsius-link" class="active">°C</a> |
                   <a href="#" id="fahrenheit-link"> °F</a></span
                 >
-                <span class="description" id="report"> </span>
               </h2>
             </div>
             <div class="col-4">
@@ -144,7 +150,6 @@
             </div>
           </div>
         </div>
-        <br />
 
         <div class="temperature text-center">
           <div class="row">
@@ -172,11 +177,6 @@
               -4°/0° <br />
               ☁️ <br />
               Tue
-            </div>
-            <div class="col">
-              -4°/0° <br />
-              🌤️ <br />
-              Wed
             </div>
           </div>
         </div>
