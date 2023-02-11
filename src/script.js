@@ -34,10 +34,10 @@ function home(city) {
 
 function showTemperature(response) {
   console.log(response.data);
-  let roundTemp = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
   let temperature = document.querySelector("#warmth");
   console.log(temperature);
-  temperature.innerHTML = `${roundTemp}`;
+  temperature.innerHTML = Math.round(response.data.main.temp);
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
@@ -54,6 +54,7 @@ function showTemperature(response) {
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#warmth");
+
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
   let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
@@ -66,9 +67,7 @@ function displayCelsiusTemperature(event) {
   let temperatureElement = document.querySelector("#warmth");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
-
 let celsiusTemperature = null;
-
 function cityWeather(event) {
   event.preventDefault();
   let input = document.querySelector("#input-city");
