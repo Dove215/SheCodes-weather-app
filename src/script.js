@@ -118,7 +118,7 @@ function displayCelsiusTemperature(event) {
 let celsiusTemperature = null;
 
 function home(city) {
-  let apiKey = "515c9ddbeb3cda9061acfab71031839e";
+  let apiKey = "cabdbda40038ba7d1165b953b1c7bd6c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
@@ -129,7 +129,7 @@ function cityWeather(event) {
   console.log(input.value);
   let h1 = document.querySelector("h1");
   h1.innerHTML = `${input.value}`;
-  let apiKey = "515c9ddbeb3cda9061acfab71031839e";
+  let apiKey = "cabdbda40038ba7d1165b953b1c7bd6c";
   let city = document.querySelector("#input-city").value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   console.log(event);
